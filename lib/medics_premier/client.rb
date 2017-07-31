@@ -7,10 +7,9 @@ module MedicsPremier
 
     include HmacSigner
 
-    def initialize(endpoint, request_uri, gateway_key, secret_key)
+    def initialize(endpoint, request_uri, secret_key)
       @endpoint = endpoint
       @request_uri = request_uri
-      @gateway_key = gateway_key
       @secret_key = secret_key
     end
 

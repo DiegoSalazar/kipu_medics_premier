@@ -4,6 +4,7 @@ require 'medics_premier/client'
 require 'httparty'
 require 'openssl'
 require 'base64'
+require 'json'
 require 'uri'
 
 # Namespace and API Client factory
@@ -12,10 +13,6 @@ module MedicsPremier
 
   ENDPOINT = ENV.fetch 'KIPU_MEDICS_PREMIER_ENDPOINT', 'https://api.myadsc.com'
   REQUEST_URI = ENV.fetch 'KIPU_MEDICS_PREMIER_REQUEST_URI', '/api/v4/edi'
-
-  GATEWAY_KEY = ENV.fetch 'KIPU_MEDICS_PREMIER_GATEWAY_KEY' do
-    raise MissingConfig, 'Missing KIPU_MEDICS_PREMIER_GATEWAY_KEY env var'
-  end
 
   SECRET_KEY = ENV.fetch 'KIPU_MEDICS_PREMIER_SECRET_KEY' do
     raise MissingConfig, 'Missing KIPU_MEDICS_PREMIER_SECRET_KEY env var'

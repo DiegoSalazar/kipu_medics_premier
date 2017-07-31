@@ -1,14 +1,12 @@
 module MedicsPremier
   # Contains HMAC signature logic
   module HmacSigner
-    RFC_822_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
-
     def md5_digest(json)
       Digest::MD5.base64digest json
     end
 
-    def build_canonical_string(md5, request_uri, timestamp)
-      "#{md5},#{request_uri},#{timestamp}"
+    def build_canonical_string(content_md5, request_uri, timestamp)
+      "#{content_md5},#{request_uri},#{timestamp}"
     end
 
     def encode_signature(secret_key, canonical_string)
@@ -20,7 +18,7 @@ module MedicsPremier
     end
 
     def formatted_time
-      (Time.respond_to?(:zone) ? Time.zone.now : Time.now).strftime RFC_822_FORMAT
+      (Time.respond_to?(:zone) ? Time.zone.now : Time.now).httpdate
     end
   end
 end
