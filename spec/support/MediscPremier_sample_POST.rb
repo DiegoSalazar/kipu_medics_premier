@@ -3,7 +3,7 @@ require 'base64'
 require 'httparty'
 
 # INPUT section:
-ENDPOINT      = 'https://api.myadsc.com'
+ENDPOINT      = ENV.fetch 'KIPU_MEDICS_PREMIER_ENDPOINT', 'https://api.myadsc.com'
 @timestamp    = Time.now.httpdate # RFC 822 standard: 'Tue, 20 Jun 2017 14:30:46 GMT'
 
 SECRET_KEY    = ENV.fetch 'KIPU_MEDICS_PREMIER_SECRET_KEY'
