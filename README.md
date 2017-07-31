@@ -7,7 +7,7 @@ API Client for the Medics Premier system used by (currently just 1) Kipu client.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'medics_premier_client'
+gem 'medics_premier'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install medics_premier_client
+    $ gem install medics_premier
 
 ## Usage
 
@@ -30,5 +30,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/medics_premier_client.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/medics_premier.
 
