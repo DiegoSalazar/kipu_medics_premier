@@ -19,7 +19,7 @@ module MedicsPremier
   end
 
   # Instantiates a new client instance with default config
-  def self.client(endpoint: ENDPOINT, request_uri: REQUEST_URI, gateway_key: GATEWAY_KEY, secret_key: SECRET_KEY)
-    Client.new endpoint, request_uri, gateway_key, secret_key
+  def self.client(endpoint: ENDPOINT, request_uri: REQUEST_URI, secret_key: SECRET_KEY)
+    Client.new endpoint, request_uri, secret_key
   end
 end
