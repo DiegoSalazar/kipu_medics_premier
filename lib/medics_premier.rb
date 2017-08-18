@@ -22,14 +22,8 @@ module MedicsPremier
     raise MissingConfig, 'Missing KIPU_MEDICS_PREMIER_SECRET_KEY env var'
   end
 
-  module_function
-
   # Instantiates a new client instance with default config
-  def client(endpoint: ENDPOINT, request_uri: REQUEST_URI, gateway_key: GATEWAY_KEY, secret_key: SECRET_KEY)
+  def self.client(endpoint: ENDPOINT, request_uri: REQUEST_URI, gateway_key: GATEWAY_KEY, secret_key: SECRET_KEY)
     Client.new endpoint, request_uri, gateway_key, secret_key
-  end
-
-  def api_url
-    URI.join ENDPOINT, REQUEST_URI
   end
 end

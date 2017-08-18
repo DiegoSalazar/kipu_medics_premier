@@ -26,11 +26,11 @@ module MedicsPremier
       HTTParty.post url, body: json, headers: headers(md5, signature, timestamp)
     end
 
-    private
-
     def url
       URI.join @endpoint, @request_uri
     end
+
+    private
 
     def headers(md5, signature, timestamp)
       {
